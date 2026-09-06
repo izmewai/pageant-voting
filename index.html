@@ -1,356 +1,1271 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pageant Voting</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Friend Vote Game 2026</title>
+
 
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
-    font-family:Arial, sans-serif;
+    box-sizing:border-box;
 }
 
 body{
-    background:linear-gradient(135deg,#111,#2b1b08,#111);
-    color:white;
-    min-height:100vh;
+
+    font-family:
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
+
+    background:
+    #eaf6fb;
+
+    color:#1d2d36;
+
 }
+
+button,
+input{
+    font-family:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 header{
+
+    background:#ffffff;
+
     text-align:center;
-    padding:35px 20px;
+
+    padding:
+    35px 20px
+    30px;
+
+    border-bottom:
+    1px solid #d6e8ef;
+
 }
+
+
+.logo{
+
+    width:50px;
+    height:50px;
+
+    margin:
+    0 auto
+    12px;
+
+    border-radius:50%;
+
+    background:#dceff7;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:25px;
+
+}
+
 
 header h1{
-    font-size:32px;
-    letter-spacing:3px;
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    font-weight:500;
+
+    font-size:30px;
+
+    letter-spacing:2px;
+
+    color:#243842;
+
 }
+
 
 header p{
-    color:#d4af37;
+
     margin-top:10px;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    color:#7d98a5;
+
 }
+
+
+/* =========================
+   MAIN
+========================= */
 
 .container{
-    width:90%;
+
+    width:92%;
+
     max-width:1000px;
+
     margin:auto;
+
+    padding:
+    40px 0
+    55px;
+
 }
+
+
+.intro{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+
+.intro h2{
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-weight:500;
+
+    font-size:25px;
+
+}
+
+
+.intro p{
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    color:#7a929d;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================
+   CONTESTANT GRID
+========================= */
 
 .contestants{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:20px;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(250px,1fr)
+    );
+
+    gap:24px;
+
 }
+
+
+/* =========================
+   CARD
+========================= */
 
 .card{
-    background:white;
-    color:#222;
-    border-radius:15px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
     overflow:hidden;
-    text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.4);
+
+    border:
+    1px solid #dcebf1;
+
+    box-shadow:
+    0 10px 30px
+    rgba(50,90,110,.10);
+
+    transition:.3s;
+
+}
+
+
+.card:hover{
+
+    transform:
+    translateY(-4px);
+
+    box-shadow:
+    0 16px 35px
+    rgba(50,90,110,.15);
+
+}
+
+
+/* =========================
+   TOP 1 FEATURED
+========================= */
+
+.card.top-one{
+
+    grid-column:
+    span 2;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.photo-box{
+
     position:relative;
+
 }
 
-.rank{
-    background:#d4af37;
-    color:white;
-    padding:10px;
-    font-weight:bold;
-}
 
-.card img{
+.photo-box img{
+
     width:100%;
-    height:280px;
+
+    height:330px;
+
     object-fit:cover;
+
+    display:block;
+
 }
+
+
+.top-one .photo-box img{
+
+    height:440px;
+
+}
+
+
+/* =========================
+   RANK NUMBER
+========================= */
+
+.rank-number{
+
+    position:absolute;
+
+    bottom:-23px;
+
+    left:20px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    border:
+    2px solid #9bc7da;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-size:20px;
+
+    color:#31596b;
+
+    box-shadow:
+    0 5px 15px
+    rgba(0,0,0,.10);
+
+}
+
+
+.top-one .rank-number{
+
+    width:62px;
+    height:62px;
+
+    font-size:27px;
+
+    border-color:#6eabc6;
+
+}
+
+
+/* =========================
+   INFO
+========================= */
 
 .info{
-    padding:20px;
+
+    padding:
+    40px 22px
+    25px;
+
 }
 
-.info h2{
-    font-size:22px;
+
+.top-one .info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    padding:
+    35px;
+
 }
+
+
+.name{
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-size:21px;
+
+    font-weight:500;
+
+    color:#20323c;
+
+}
+
+
+.top-one .name{
+
+    font-size:31px;
+
+}
+
 
 .city{
-    color:#777;
-    margin:8px 0;
+
+    margin-top:9px;
+
+    color:#78919d;
+
+    font-size:13px;
+
 }
+
+
+/* =========================
+   POINTS
+========================= */
 
 .points{
-    font-size:22px;
-    font-weight:bold;
-    color:#b8860b;
-    margin:15px 0;
+
+    margin-top:22px;
+
+    padding:
+    14px 0;
+
+    border-top:
+    1px solid #eaf1f4;
+
+    border-bottom:
+    1px solid #eaf1f4;
+
+    display:flex;
+
+    justify-content:
+    space-between;
+
+    align-items:center;
+
 }
+
+
+.points small{
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    color:#8aa0aa;
+
+}
+
+
+.points strong{
+
+    font-size:19px;
+
+    color:#31596b;
+
+}
+
+
+/* =========================
+   VOTE BUTTON
+========================= */
 
 .vote-btn{
+
     width:100%;
-    padding:13px;
+
+    margin-top:18px;
+
+    padding:14px;
+
     border:none;
-    border-radius:8px;
-    background:#111;
+
+    border-radius:10px;
+
+    background:#31596b;
+
     color:white;
-    font-size:16px;
+
+    font-size:11px;
+
+    letter-spacing:1.5px;
+
     cursor:pointer;
+
+    transition:.3s;
+
 }
+
 
 .vote-btn:hover{
-    background:#d4af37;
+
+    background:#213f4c;
+
 }
 
-footer{
-    text-align:center;
-    padding:40px 20px;
+
+.vote-btn:active{
+
+    transform:
+    scale(.98);
+
 }
 
-.admin-btn{
-    background:transparent;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    padding:10px 18px;
-    border-radius:8px;
-    cursor:pointer;
-}
+
+/* =========================
+   ADMIN PANEL
+========================= */
 
 #adminPanel{
+
     display:none;
-    background:white;
-    color:#222;
+
     width:90%;
-    max-width:600px;
-    margin:20px auto;
-    padding:25px;
-    border-radius:15px;
+
+    max-width:650px;
+
+    margin:
+    10px auto
+    50px;
+
+    background:white;
+
+    padding:28px;
+
+    border-radius:18px;
+
+    border:
+    1px solid #dcebf1;
+
+    box-shadow:
+    0 10px 30px
+    rgba(50,90,110,.10);
+
 }
 
-#adminPanel input{
-    width:100%;
-    padding:12px;
-    margin:8px 0;
+
+.admin-title{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
 }
+
+
+.admin-title h2{
+
+    font-family:
+    Georgia,
+    serif;
+
+    font-weight:500;
+
+}
+
+
+.admin-title p{
+
+    margin-top:7px;
+
+    font-size:11px;
+
+    color:#8298a2;
+
+}
+
+
+.admin-input{
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:14px;
+
+    border:
+    1px solid #d6e6ed;
+
+    border-radius:9px;
+
+    outline:none;
+
+}
+
+
+.admin-input:focus{
+
+    border-color:#7eb4cb;
+
+}
+
 
 .add-btn{
+
     width:100%;
-    padding:12px;
-    background:#d4af37;
+
+    margin-top:15px;
+
+    padding:14px;
+
     border:none;
+
+    border-radius:9px;
+
+    background:#31596b;
+
     color:white;
+
+    font-size:11px;
+
+    letter-spacing:1px;
+
     cursor:pointer;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:
+    35px 20px;
+
+    border-top:
+    1px solid #d6e7ed;
+
+}
+
+
+.admin-btn{
+
+    background:transparent;
+
+    border:none;
+
+    color:#6e8996;
+
+    font-size:12px;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+}
+
+
+.footer-text{
+
+    margin-top:15px;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    color:#9db0b9;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+    header h1{
+
+        font-size:24px;
+
+    }
+
+
+    .contestants{
+
+        grid-template-columns:
+        1fr;
+
+    }
+
+
+    .card.top-one{
+
+        grid-column:auto;
+
+        display:block;
+
+    }
+
+
+    .photo-box img{
+
+        height:350px;
+
+    }
+
+
+    .top-one .photo-box img{
+
+        height:410px;
+
+    }
+
+
+    .top-one .info{
+
+        display:block;
+
+        padding:
+        42px 22px
+        25px;
+
+    }
+
+
+    .top-one .name{
+
+        font-size:27px;
+
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <h1>👑 PAGEANT VOTING</h1>
-    <p>OFFICIAL ONLINE VOTING</p>
+
+    <div class="logo">
+        👑
+    </div>
+
+
+    <h1>
+        FRIEND VOTE GAME 2026
+    </h1>
+
+
+    <p>
+        ONLINE VOTING
+    </p>
+
 </header>
 
 
+
+<!-- MAIN -->
+
 <div class="container">
 
-<div class="contestants" id="contestants">
+
+<div class="intro">
+
+    <h2>
+        Contestants
+    </h2>
+
+
+    <p>
+        VOTE FOR YOUR FAVORITE FRIEND
+    </p>
 
 </div>
 
+
+
+<div
+class="contestants"
+id="contestants">
+
 </div>
 
+
+</div>
+
+
+
+<!-- ADMIN PANEL -->
 
 <div id="adminPanel">
 
-<h2>🔐 ADMIN PANEL</h2>
 
-<br>
+<div class="admin-title">
 
-<input type="text" id="name" placeholder="Contestant Name">
+    <h2>
+        🔐 Admin Panel
+    </h2>
 
-<input type="text" id="city" placeholder="City Name">
-
-<input type="text" id="image" placeholder="Image URL">
-
-<button class="add-btn" onclick="addContestant()">
-➕ ADD NEW CONTESTANT
-</button>
+    <p>
+        Manage Contestants
+    </p>
 
 </div>
 
 
+<input
+class="admin-input"
+type="text"
+id="name"
+placeholder="Contestant Name">
+
+
+<input
+class="admin-input"
+type="text"
+id="city"
+placeholder="City Name">
+
+
+<input
+class="admin-input"
+type="text"
+id="image"
+placeholder="Contestant Image URL">
+
+
+<button
+class="add-btn"
+onclick="addContestant()">
+
+    + ADD NEW CONTESTANT
+
+</button>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+
 <footer>
 
-<button class="admin-btn" onclick="adminLogin()">
-🔐 ADMIN PERMITS
+
+<button
+class="admin-btn"
+onclick="adminLogin()">
+
+    🔐 ADMIN PERMITS
+
 </button>
+
+
+<div class="footer-text">
+
+    FRIEND VOTE GAME 2026
+
+</div>
+
 
 </footer>
 
 
+
 <script>
 
-let contestants = JSON.parse(
-    localStorage.getItem("contestants")
-) || [
+
+/* =========================
+   CONTESTANT DATA
+========================= */
+
+let contestants =
+
+JSON.parse(
+
+localStorage.getItem(
+"contestants"
+)
+
+)
+
+||
+
+[
 
 {
-    name:"Nann Thazin Paing",
-    city:"Thanlyin",
-    points:0,
-    image:"https://via.placeholder.com/400x500"
+
+name:"Contestant One",
+
+city:"Yangon",
+
+points:0,
+
+image:
+"https://via.placeholder.com/600x800"
+
 },
 
 {
-    name:"Contestant 02",
-    city:"Yangon",
-    points:0,
-    image:"https://via.placeholder.com/400x500"
+
+name:"Contestant Two",
+
+city:"Mandalay",
+
+points:0,
+
+image:
+"https://via.placeholder.com/600x800"
+
+},
+
+{
+
+name:"Contestant Three",
+
+city:"Thanlyin",
+
+points:0,
+
+image:
+"https://via.placeholder.com/600x800"
+
 }
 
 ];
 
 
+
+/* =========================
+   SHOW CONTESTANTS
+========================= */
+
 function renderContestants(){
 
-    contestants.sort((a,b)=>b.points-a.points);
 
-    let container =
-    document.getElementById("contestants");
+contestants.sort(
 
-    container.innerHTML="";
+function(a,b){
 
-    contestants.forEach((person,index)=>{
-
-        container.innerHTML += `
-
-        <div class="card">
-
-        <div class="rank">
-        🏆 TOP ${index+1}
-        </div>
-
-        <img src="${person.image}">
-
-        <div class="info">
-
-        <h2>${person.name}</h2>
-
-        <div class="city">
-        📍 ${person.city}
-        </div>
-
-        <div class="points">
-        ⭐ ${person.points} POINTS
-        </div>
-
-        <button class="vote-btn"
-        onclick="vote(${index})">
-
-        ❤️ VOTE +10 POINTS
-
-        </button>
-
-        </div>
-
-        </div>
-
-        `;
-
-    });
+return b.points-a.points;
 
 }
 
+);
+
+
+let container =
+
+document.getElementById(
+"contestants"
+);
+
+
+container.innerHTML = "";
+
+
+contestants.forEach(
+
+function(person,index){
+
+
+let topClass = "";
+
+
+/* TOP 1 */
+
+if(index === 0){
+
+topClass = "top-one";
+
+}
+
+
+container.innerHTML +=
+
+`
+
+<div class="card ${topClass}">
+
+
+<div class="photo-box">
+
+
+<img
+
+src="${person.image}"
+
+alt="${person.name}">
+
+
+<!-- RANK NUMBER -->
+
+<div class="rank-number">
+
+${index + 1}
+
+</div>
+
+
+</div>
+
+
+
+<div class="info">
+
+
+<div class="name">
+
+${person.name}
+
+</div>
+
+
+<div class="city">
+
+📍 ${person.city}
+
+</div>
+
+
+
+<div class="points">
+
+
+<small>
+
+TOTAL POINTS
+
+</small>
+
+
+<strong>
+
+${person.points}
+
+POINTS
+
+</strong>
+
+
+</div>
+
+
+
+<button
+
+class="vote-btn"
+
+onclick="vote(${index})">
+
+❤️ VOTE +10 POINTS
+
+</button>
+
+
+</div>
+
+
+</div>
+
+`;
+
+
+}
+
+);
+
+
+}
+
+
+
+/* =========================
+   VOTE
+========================= */
 
 function vote(index){
 
-    contestants[index].points += 10;
 
-    localStorage.setItem(
-        "contestants",
-        JSON.stringify(contestants)
-    );
-
-    renderContestants();
-
-}
+contestants[index].points += 10;
 
 
-function adminLogin(){
+/* SAVE */
 
-    let pin = prompt("Enter Admin PIN");
+localStorage.setItem(
 
-    if(pin === "2013"){
+"contestants",
 
-        document.getElementById(
-        "adminPanel"
-        ).style.display="block";
+JSON.stringify(
+contestants
+)
 
-    }
-
-    else{
-
-        alert("Incorrect PIN!");
-
-    }
-
-}
+);
 
 
-function addContestant(){
-
-    let name =
-    document.getElementById("name").value;
-
-    let city =
-    document.getElementById("city").value;
-
-    let image =
-    document.getElementById("image").value;
-
-
-    if(name=="" || city==""){
-
-        alert("Please fill all information!");
-
-        return;
-
-    }
-
-
-    contestants.push({
-
-        name:name,
-        city:city,
-        points:0,
-        image:image ||
-        "https://via.placeholder.com/400x500"
-
-    });
-
-
-    localStorage.setItem(
-        "contestants",
-        JSON.stringify(contestants)
-    );
-
-
-    renderContestants();
-
-
-    alert("Contestant Added!");
-
-}
-
+/* UPDATE */
 
 renderContestants();
 
+
+}
+
+
+
+/* =========================
+   ADMIN LOGIN
+========================= */
+
+function adminLogin(){
+
+
+let pin = prompt(
+
+"Enter Admin PIN"
+
+);
+
+
+if(pin === "2013"){
+
+
+document.getElementById(
+
+"adminPanel"
+
+).style.display = "block";
+
+
+document.getElementById(
+
+"adminPanel"
+
+).scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+
+}
+
+
+else{
+
+
+alert(
+
+"Incorrect PIN!"
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   ADD NEW CONTESTANT
+========================= */
+
+function addContestant(){
+
+
+let name =
+
+document.getElementById(
+"name"
+).value;
+
+
+let city =
+
+document.getElementById(
+"city"
+).value;
+
+
+let image =
+
+document.getElementById(
+"image"
+).value;
+
+
+
+/* CHECK */
+
+if(
+
+name === ""
+
+||
+
+city === ""
+
+){
+
+alert(
+
+"Please enter Name and City!"
+
+);
+
+return;
+
+}
+
+
+
+/* ADD */
+
+contestants.push({
+
+name:name,
+
+city:city,
+
+points:0,
+
+image:
+
+image ||
+
+"https://via.placeholder.com/600x800"
+
+});
+
+
+/* SAVE */
+
+localStorage.setItem(
+
+"contestants",
+
+JSON.stringify(
+contestants
+)
+
+);
+
+
+/* CLEAR INPUT */
+
+document.getElementById(
+"name"
+).value = "";
+
+
+document.getElementById(
+"city"
+).value = "";
+
+
+document.getElementById(
+"image"
+).value = "";
+
+
+/* UPDATE */
+
+renderContestants();
+
+
+alert(
+
+"Contestant Added Successfully!"
+
+);
+
+
+}
+
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+renderContestants();
+
+
 </script>
 
+
 </body>
-  </html>
+
+</html>
