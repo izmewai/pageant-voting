@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 
@@ -8,7 +7,6 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>Friend Vote Game 2026</title>
-
 
 <style>
 
@@ -23,17 +21,9 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-
-    font-family:
-    "Trebuchet MS",
-    Arial,
-    sans-serif;
-
-    background:
-    #eaf6fb;
-
-    color:#1d2d36;
-
+    font-family:Arial, Helvetica, sans-serif;
+    background:#eaf6fb;
+    color:#20323c;
 }
 
 button,
@@ -47,51 +37,31 @@ input{
 ========================= */
 
 header{
-
     background:#ffffff;
-
     text-align:center;
-
-    padding:
-    35px 20px
-    30px;
-
-    border-bottom:
-    1px solid #d6e8ef;
-
+    padding:35px 20px 28px;
+    border-bottom:1px solid #d8e8ee;
 }
 
-
 .logo{
+    width:52px;
+    height:52px;
 
-    width:50px;
-    height:50px;
-
-    margin:
-    0 auto
-    12px;
+    margin:0 auto 12px;
 
     border-radius:50%;
 
     background:#dceff7;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     font-size:25px;
-
 }
 
-
 header h1{
-
-    font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+    font-family:Georgia, serif;
 
     font-weight:500;
 
@@ -99,20 +69,52 @@ header h1{
 
     letter-spacing:2px;
 
-    color:#243842;
-
+    color:#20323c;
 }
 
-
 header p{
-
-    margin-top:10px;
+    margin-top:9px;
 
     font-size:10px;
 
     letter-spacing:3px;
 
-    color:#7d98a5;
+    color:#829ba6;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button{
+
+    position:fixed;
+
+    top:18px;
+
+    right:18px;
+
+    width:46px;
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#31596b;
+
+    color:white;
+
+    font-size:19px;
+
+    cursor:pointer;
+
+    z-index:100;
+
+    box-shadow:
+    0 6px 18px
+    rgba(0,0,0,.15);
 
 }
 
@@ -129,10 +131,7 @@ header p{
 
     margin:auto;
 
-    padding:
-    40px 0
-    55px;
-
+    padding:40px 0 55px;
 }
 
 
@@ -141,20 +140,16 @@ header p{
     text-align:center;
 
     margin-bottom:30px;
-
 }
 
 
 .intro h2{
 
-    font-family:
-    Georgia,
-    serif;
+    font-family:Georgia, serif;
 
     font-weight:500;
 
     font-size:25px;
-
 }
 
 
@@ -162,12 +157,11 @@ header p{
 
     margin-top:8px;
 
-    font-size:12px;
-
-    color:#7a929d;
+    font-size:11px;
 
     letter-spacing:1px;
 
+    color:#8097a1;
 }
 
 
@@ -186,7 +180,6 @@ header p{
     );
 
     gap:24px;
-
 }
 
 
@@ -202,38 +195,21 @@ header p{
 
     overflow:hidden;
 
-    border:
-    1px solid #dcebf1;
+    border:1px solid #dcebf1;
 
     box-shadow:
-    0 10px 30px
+    0 10px 28px
     rgba(50,90,110,.10);
-
-    transition:.3s;
-
-}
-
-
-.card:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 16px 35px
-    rgba(50,90,110,.15);
-
 }
 
 
 /* =========================
-   TOP 1 FEATURED
+   TOP 1
 ========================= */
 
 .card.top-one{
 
-    grid-column:
-    span 2;
+    grid-column:1 / -1;
 
     display:grid;
 
@@ -244,13 +220,12 @@ header p{
 
 
 /* =========================
-   IMAGE
+   PHOTO
 ========================= */
 
 .photo-box{
 
     position:relative;
-
 }
 
 
@@ -263,14 +238,14 @@ header p{
     object-fit:cover;
 
     display:block;
-
 }
 
 
+/* TOP 1 PHOTO BIG */
+
 .top-one .photo-box img{
 
-    height:440px;
-
+    height:470px;
 }
 
 
@@ -293,18 +268,14 @@ header p{
 
     background:#ffffff;
 
-    border:
-    2px solid #9bc7da;
+    border:2px solid #9bc7da;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    font-family:
-    Georgia,
-    serif;
+    font-family:Georgia, serif;
 
     font-size:20px;
 
@@ -312,10 +283,11 @@ header p{
 
     box-shadow:
     0 5px 15px
-    rgba(0,0,0,.10);
-
+    rgba(0,0,0,.12);
 }
 
+
+/* TOP 1 RANK */
 
 .top-one .rank-number{
 
@@ -325,7 +297,6 @@ header p{
     font-size:27px;
 
     border-color:#6eabc6;
-
 }
 
 
@@ -335,10 +306,7 @@ header p{
 
 .info{
 
-    padding:
-    40px 22px
-    25px;
-
+    padding:40px 22px 25px;
 }
 
 
@@ -350,42 +318,39 @@ header p{
 
     justify-content:center;
 
-    padding:
-    35px;
-
+    padding:35px;
 }
 
 
+/* NAME */
+
 .name{
 
-    font-family:
-    Georgia,
-    serif;
+    font-family:Georgia, serif;
 
     font-size:21px;
 
     font-weight:500;
 
     color:#20323c;
-
 }
 
 
 .top-one .name{
 
-    font-size:31px;
-
+    font-size:32px;
 }
 
+
+/* CITY */
 
 .city{
 
     margin-top:9px;
 
-    color:#78919d;
-
     font-size:13px;
 
+    color:#78919d;
 }
 
 
@@ -397,22 +362,17 @@ header p{
 
     margin-top:22px;
 
-    padding:
-    14px 0;
+    padding:14px 0;
 
-    border-top:
-    1px solid #eaf1f4;
+    border-top:1px solid #e8f0f3;
 
-    border-bottom:
-    1px solid #eaf1f4;
+    border-bottom:1px solid #e8f0f3;
 
     display:flex;
 
-    justify-content:
-    space-between;
-
     align-items:center;
 
+    justify-content:space-between;
 }
 
 
@@ -422,17 +382,15 @@ header p{
 
     letter-spacing:1px;
 
-    color:#8aa0aa;
-
+    color:#8ba0a9;
 }
 
 
 .points strong{
 
-    font-size:19px;
+    font-size:18px;
 
     color:#31596b;
-
 }
 
 
@@ -461,24 +419,12 @@ header p{
     letter-spacing:1.5px;
 
     cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.vote-btn:hover{
-
-    background:#213f4c;
-
 }
 
 
 .vote-btn:active{
 
-    transform:
-    scale(.98);
-
+    transform:scale(.98);
 }
 
 
@@ -490,27 +436,25 @@ header p{
 
     display:none;
 
-    width:90%;
+    width:92%;
 
-    max-width:650px;
+    max-width:700px;
 
     margin:
-    10px auto
+    0 auto
     50px;
 
     background:white;
 
-    padding:28px;
+    padding:25px;
 
     border-radius:18px;
 
-    border:
-    1px solid #dcebf1;
+    border:1px solid #dcebf1;
 
     box-shadow:
     0 10px 30px
     rgba(50,90,110,.10);
-
 }
 
 
@@ -519,18 +463,14 @@ header p{
     text-align:center;
 
     margin-bottom:20px;
-
 }
 
 
 .admin-title h2{
 
-    font-family:
-    Georgia,
-    serif;
+    font-family:Georgia, serif;
 
     font-weight:500;
-
 }
 
 
@@ -541,42 +481,56 @@ header p{
     font-size:11px;
 
     color:#8298a2;
-
 }
 
+
+/* INPUT */
 
 .admin-input{
 
     width:100%;
 
-    margin-top:12px;
-
     padding:14px;
 
-    border:
-    1px solid #d6e6ed;
+    margin-top:12px;
+
+    border:1px solid #d6e6ed;
 
     border-radius:9px;
 
     outline:none;
 
+    background:#fbfdfe;
 }
 
 
-.admin-input:focus{
+/* FILE INPUT */
 
-    border-color:#7eb4cb;
+.file-input{
 
+    width:100%;
+
+    margin-top:12px;
+
+    padding:12px;
+
+    border:1px dashed #9fc5d4;
+
+    border-radius:9px;
+
+    background:#f6fbfd;
 }
 
+
+/* ADMIN BUTTON */
 
 .add-btn{
 
     width:100%;
 
-    margin-top:15px;
-
     padding:14px;
+
+    margin-top:15px;
 
     border:none;
 
@@ -591,7 +545,81 @@ header p{
     letter-spacing:1px;
 
     cursor:pointer;
+}
 
+
+/* =========================
+   ADMIN CONTESTANT LIST
+========================= */
+
+.admin-list{
+
+    margin-top:30px;
+}
+
+
+.admin-card{
+
+    padding:18px;
+
+    margin-top:15px;
+
+    border:1px solid #dcebf1;
+
+    border-radius:12px;
+
+    background:#fbfdfe;
+}
+
+
+.admin-card h3{
+
+    font-family:Georgia, serif;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+}
+
+
+.admin-buttons{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:12px;
+}
+
+
+.edit-btn,
+.delete-btn{
+
+    flex:1;
+
+    padding:10px;
+
+    border:none;
+
+    border-radius:7px;
+
+    cursor:pointer;
+}
+
+
+.edit-btn{
+
+    background:#31596b;
+
+    color:white;
+}
+
+
+.delete-btn{
+
+    background:#eeeeee;
+
+    color:#a33;
 }
 
 
@@ -603,12 +631,9 @@ footer{
 
     text-align:center;
 
-    padding:
-    35px 20px;
+    padding:35px 20px;
 
-    border-top:
-    1px solid #d6e7ed;
-
+    border-top:1px solid #d7e7ed;
 }
 
 
@@ -618,14 +643,13 @@ footer{
 
     border:none;
 
-    color:#6e8996;
+    color:#718d9a;
 
     font-size:12px;
 
     letter-spacing:1px;
 
     cursor:pointer;
-
 }
 
 
@@ -638,7 +662,6 @@ footer{
     letter-spacing:2px;
 
     color:#9db0b9;
-
 }
 
 
@@ -649,40 +672,36 @@ footer{
 @media(max-width:650px){
 
     header h1{
-
         font-size:24px;
-
     }
 
 
     .contestants{
-
-        grid-template-columns:
-        1fr;
-
+        grid-template-columns:1fr;
     }
 
+
+    /* TOP 1 MOBILE */
 
     .card.top-one{
 
-        grid-column:auto;
-
         display:block;
 
+        grid-column:auto;
     }
 
 
-    .photo-box img{
-
-        height:350px;
-
-    }
-
+    /* TOP 1 BIG */
 
     .top-one .photo-box img{
+        height:420px;
+    }
 
-        height:410px;
 
+    /* NORMAL PHOTO */
+
+    .photo-box img{
+        height:330px;
     }
 
 
@@ -690,17 +709,20 @@ footer{
 
         display:block;
 
-        padding:
-        42px 22px
-        25px;
-
+        padding:42px 22px 25px;
     }
 
 
     .top-one .name{
-
         font-size:27px;
+    }
 
+
+    .music-button{
+
+        top:12px;
+
+        right:12px;
     }
 
 }
@@ -713,43 +735,88 @@ footer{
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio
+id="backgroundMusic"
+loop>
+
+    <source
+    src="VID_20260906_110914_487.mp4"
+    type="audio/mp4">
+
+</audio>
+
+
+
+<!-- =========================
+     MUSIC BUTTON
+========================= -->
+
+<button
+class="music-button"
+onclick="toggleMusic()"
+id="musicButton">
+
+🎵
+
+</button>
+
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
-    <div class="logo">
-        👑
-    </div>
+<div class="logo">
+
+👑
+
+</div>
 
 
-    <h1>
-        FRIEND VOTE GAME 2026
-    </h1>
+<h1>
+
+FRIEND VOTE GAME 2026
+
+</h1>
 
 
-    <p>
-        ONLINE VOTING
-    </p>
+<p>
+
+ONLINE VOTING
+
+</p>
 
 </header>
 
 
 
-<!-- MAIN -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <div class="container">
 
 
 <div class="intro">
 
-    <h2>
-        Contestants
-    </h2>
+<h2>
+
+Contestants
+
+</h2>
 
 
-    <p>
-        VOTE FOR YOUR FAVORITE FRIEND
-    </p>
+<p>
+
+VOTE FOR YOUR FAVORITE FRIEND
+
+</p>
 
 </div>
 
@@ -766,75 +833,121 @@ id="contestants">
 
 
 
-<!-- ADMIN PANEL -->
+<!-- =========================
+     ADMIN PANEL
+========================= -->
 
 <div id="adminPanel">
 
 
 <div class="admin-title">
 
-    <h2>
-        🔐 Admin Panel
-    </h2>
+<h2>
 
-    <p>
-        Manage Contestants
-    </p>
+🔐 Admin Panel
+
+</h2>
+
+
+<p>
+
+Manage Your Contestants
+
+</p>
 
 </div>
 
 
+
+<!-- ADD CONTESTANT -->
+
+
 <input
+
 class="admin-input"
+
 type="text"
+
 id="name"
+
 placeholder="Contestant Name">
 
 
+
 <input
+
 class="admin-input"
+
 type="text"
+
 id="city"
+
 placeholder="City Name">
 
 
+
+<!-- PHOTO FILE -->
+
+
 <input
-class="admin-input"
-type="text"
-id="image"
-placeholder="Contestant Image URL">
+
+class="file-input"
+
+type="file"
+
+id="imageFile"
+
+accept="image/*">
+
 
 
 <button
+
 class="add-btn"
+
 onclick="addContestant()">
 
-    + ADD NEW CONTESTANT
+➕ ADD NEW CONTESTANT
 
 </button>
 
 
+
+<!-- ADMIN LIST -->
+
+<div
+class="admin-list"
+id="adminList">
+
+</div>
+
+
 </div>
 
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
 
 <button
+
 class="admin-btn"
+
 onclick="adminLogin()">
 
-    🔐 ADMIN PERMITS
+🔐 ADMIN PERMITS
 
 </button>
 
 
+
 <div class="footer-text">
 
-    FRIEND VOTE GAME 2026
+FRIEND VOTE GAME 2026
 
 </div>
 
@@ -847,7 +960,7 @@ onclick="adminLogin()">
 
 
 /* =========================
-   CONTESTANT DATA
+   DATA
 ========================= */
 
 let contestants =
@@ -862,57 +975,36 @@ localStorage.getItem(
 
 ||
 
-[
-
-{
-
-name:"Contestant One",
-
-city:"Yangon",
-
-points:0,
-
-image:
-"https://via.placeholder.com/600x800"
-
-},
-
-{
-
-name:"Contestant Two",
-
-city:"Mandalay",
-
-points:0,
-
-image:
-"https://via.placeholder.com/600x800"
-
-},
-
-{
-
-name:"Contestant Three",
-
-city:"Thanlyin",
-
-points:0,
-
-image:
-"https://via.placeholder.com/600x800"
-
-}
-
-];
+[];
 
 
 
 /* =========================
-   SHOW CONTESTANTS
+   SAVE
+========================= */
+
+function saveContestants(){
+
+localStorage.setItem(
+
+"contestants",
+
+JSON.stringify(contestants)
+
+);
+
+}
+
+
+
+/* =========================
+   RENDER CONTESTANTS
 ========================= */
 
 function renderContestants(){
 
+
+/* SORT BY POINTS */
 
 contestants.sort(
 
@@ -932,7 +1024,7 @@ document.getElementById(
 );
 
 
-container.innerHTML = "";
+container.innerHTML="";
 
 
 contestants.forEach(
@@ -940,16 +1032,23 @@ contestants.forEach(
 function(person,index){
 
 
-let topClass = "";
+let topClass="";
 
-
-/* TOP 1 */
 
 if(index === 0){
 
-topClass = "top-one";
+topClass="top-one";
 
 }
+
+
+/* IMAGE */
+
+let imageSource =
+
+person.image ||
+
+"https://via.placeholder.com/600x800";
 
 
 container.innerHTML +=
@@ -964,12 +1063,12 @@ container.innerHTML +=
 
 <img
 
-src="${person.image}"
+src="${imageSource}"
 
 alt="${person.name}">
 
 
-<!-- RANK NUMBER -->
+<!-- RANK -->
 
 <div class="rank-number">
 
@@ -990,6 +1089,7 @@ ${index + 1}
 ${person.name}
 
 </div>
+
 
 
 <div class="city">
@@ -1047,6 +1147,8 @@ onclick="vote(${index})">
 );
 
 
+renderAdminList();
+
 }
 
 
@@ -1061,22 +1163,57 @@ function vote(index){
 contestants[index].points += 10;
 
 
-/* SAVE */
+saveContestants();
 
-localStorage.setItem(
 
-"contestants",
+renderContestants();
 
-JSON.stringify(
-contestants
-)
+}
 
+
+
+/* =========================
+   MUSIC
+========================= */
+
+function toggleMusic(){
+
+
+let music =
+
+document.getElementById(
+"backgroundMusic"
 );
 
 
-/* UPDATE */
+let button =
 
-renderContestants();
+document.getElementById(
+"musicButton"
+);
+
+
+if(music.paused){
+
+
+music.play();
+
+
+button.innerHTML="🔊";
+
+
+}
+
+else{
+
+
+music.pause();
+
+
+button.innerHTML="🎵";
+
+
+}
 
 
 }
@@ -1100,26 +1237,27 @@ let pin = prompt(
 if(pin === "2013"){
 
 
-document.getElementById(
-
-"adminPanel"
-
-).style.display = "block";
-
+let panel =
 
 document.getElementById(
-
 "adminPanel"
+);
 
-).scrollIntoView({
+
+panel.style.display="block";
+
+
+panel.scrollIntoView({
 
 behavior:"smooth"
 
 });
 
 
-}
+renderAdminList();
 
+
+}
 
 else{
 
@@ -1139,7 +1277,7 @@ alert(
 
 
 /* =========================
-   ADD NEW CONTESTANT
+   ADD CONTESTANT
 ========================= */
 
 function addContestant(){
@@ -1149,25 +1287,23 @@ let name =
 
 document.getElementById(
 "name"
-).value;
+).value.trim();
 
 
 let city =
 
 document.getElementById(
 "city"
-).value;
+).value.trim();
 
 
-let image =
+let file =
 
 document.getElementById(
-"image"
-).value;
+"imageFile"
+).files[0];
 
 
-
-/* CHECK */
 
 if(
 
@@ -1191,63 +1327,223 @@ return;
 
 
 
-/* ADD */
+/* IMAGE FILE */
+
+if(file){
+
+
+let reader = new FileReader();
+
+
+reader.onload = function(event){
+
 
 contestants.push({
 
+
 name:name,
+
 
 city:city,
 
+
 points:0,
 
-image:
 
-image ||
+image:event.target.result
 
-"https://via.placeholder.com/600x800"
 
 });
 
 
-/* SAVE */
-
-localStorage.setItem(
-
-"contestants",
-
-JSON.stringify(
-contestants
-)
-
-);
+saveContestants();
 
 
-/* CLEAR INPUT */
+clearAddForm();
 
-document.getElementById(
-"name"
-).value = "";
-
-
-document.getElementById(
-"city"
-).value = "";
-
-
-document.getElementById(
-"image"
-).value = "";
-
-
-/* UPDATE */
 
 renderContestants();
 
 
 alert(
 
-"Contestant Added Successfully!"
+"Contestant Added!"
+
+);
+
+
+};
+
+
+reader.readAsDataURL(file);
+
+
+}
+
+
+else{
+
+
+contestants.push({
+
+
+name:name,
+
+
+city:city,
+
+
+points:0,
+
+
+image:""
+
+
+});
+
+
+saveContestants();
+
+
+clearAddForm();
+
+
+renderContestants();
+
+
+alert(
+
+"Contestant Added!"
+
+);
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   CLEAR FORM
+========================= */
+
+function clearAddForm(){
+
+
+document.getElementById(
+"name"
+).value="";
+
+
+document.getElementById(
+"city"
+).value="";
+
+
+document.getElementById(
+"imageFile"
+).value="";
+
+
+}
+
+
+
+/* =========================
+   ADMIN LIST
+========================= */
+
+function renderAdminList(){
+
+
+let list =
+
+document.getElementById(
+"adminList"
+);
+
+
+if(!list){
+
+return;
+
+}
+
+
+list.innerHTML="";
+
+
+contestants.forEach(
+
+function(person,index){
+
+
+list.innerHTML +=
+
+`
+
+<div class="admin-card">
+
+
+<h3>
+
+${person.name}
+
+</h3>
+
+
+<p>
+
+📍 ${person.city}
+
+</p>
+
+
+<p style="margin-top:6px;">
+
+⭐ ${person.points} Points
+
+</p>
+
+
+
+<div class="admin-buttons">
+
+
+<button
+
+class="edit-btn"
+
+onclick="editContestant(${index})">
+
+✏️ EDIT
+
+</button>
+
+
+
+<button
+
+class="delete-btn"
+
+onclick="deleteContestant(${index})">
+
+🗑 DELETE
+
+</button>
+
+
+</div>
+
+
+</div>
+
+`;
+
+
+}
 
 );
 
@@ -1257,7 +1553,175 @@ alert(
 
 
 /* =========================
-   START WEBSITE
+   EDIT CONTESTANT
+========================= */
+
+function editContestant(index){
+
+
+let person =
+
+contestants[index];
+
+
+
+let newName = prompt(
+
+"Contestant Name:",
+
+person.name
+
+);
+
+
+if(
+
+newName === null
+
+||
+
+newName.trim() === ""
+
+){
+
+return;
+
+}
+
+
+
+let newCity = prompt(
+
+"City Name:",
+
+person.city
+
+);
+
+
+if(
+
+newCity === null
+
+||
+
+newCity.trim() === ""
+
+){
+
+return;
+
+}
+
+
+
+let newPoints = prompt(
+
+"Vote Points:",
+
+person.points
+
+);
+
+
+if(
+
+newPoints === null
+
+||
+
+isNaN(newPoints)
+
+){
+
+return;
+
+}
+
+
+
+/* UPDATE */
+
+person.name =
+
+newName.trim();
+
+
+person.city =
+
+newCity.trim();
+
+
+person.points =
+
+Number(newPoints);
+
+
+
+saveContestants();
+
+
+renderContestants();
+
+
+alert(
+
+"Contestant Updated!"
+
+);
+
+
+}
+
+
+
+/* =========================
+   DELETE
+========================= */
+
+function deleteContestant(index){
+
+
+let confirmDelete =
+
+confirm(
+
+"Delete this contestant?"
+
+);
+
+
+if(
+
+confirmDelete
+
+){
+
+
+contestants.splice(
+
+index,
+
+1
+
+);
+
+
+saveContestants();
+
+
+renderContestants();
+
+
+}
+
+
+}
+
+
+
+/* =========================
+   START
 ========================= */
 
 renderContestants();
@@ -1267,5 +1731,4 @@ renderContestants();
 
 
 </body>
-
 </html>
