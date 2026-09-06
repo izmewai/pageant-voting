@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pageant Voting</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#111,#2b1b08,#111);
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    text-align:center;
+    padding:35px 20px;
+}
+
+header h1{
+    font-size:32px;
+    letter-spacing:3px;
+}
+
+header p{
+    color:#d4af37;
+    margin-top:10px;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.contestants{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    color:#222;
+    border-radius:15px;
+    overflow:hidden;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
+    position:relative;
+}
+
+.rank{
+    background:#d4af37;
+    color:white;
+    padding:10px;
+    font-weight:bold;
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.info{
+    padding:20px;
+}
+
+.info h2{
+    font-size:22px;
+}
+
+.city{
+    color:#777;
+    margin:8px 0;
+}
+
+.points{
+    font-size:22px;
+    font-weight:bold;
+    color:#b8860b;
+    margin:15px 0;
+}
+
+.vote-btn{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#111;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.vote-btn:hover{
+    background:#d4af37;
+}
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+}
+
+.admin-btn{
+    background:transparent;
+    border:1px solid #d4af37;
+    color:#d4af37;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#adminPanel{
+    display:none;
+    background:white;
+    color:#222;
+    width:90%;
+    max-width:600px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:15px;
+}
+
+#adminPanel input{
+    width:100%;
+    padding:12px;
+    margin:8px 0;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    background:#d4af37;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>👑 PAGEANT VOTING</h1>
+    <p>OFFICIAL ONLINE VOTING</p>
+</header>
+
+
+<div class="container">
+
+<div class="contestants" id="contestants">
+
+</div>
+
+</div>
+
+
+<div id="adminPanel">
+
+<h2>🔐 ADMIN PANEL</h2>
+
+<br>
+
+<input type="text" id="name" placeholder="Contestant Name">
+
+<input type="text" id="city" placeholder="City Name">
+
+<input type="text" id="image" placeholder="Image URL">
+
+<button class="add-btn" onclick="addContestant()">
+➕ ADD NEW CONTESTANT
+</button>
+
+</div>
+
+
+<footer>
+
+<button class="admin-btn" onclick="adminLogin()">
+🔐 ADMIN PERMITS
+</button>
+
+</footer>
+
+
+<script>
+
+let contestants = JSON.parse(
+    localStorage.getItem("contestants")
+) || [
+
+{
+    name:"Nann Thazin Paing",
+    city:"Thanlyin",
+    points:0,
+    image:"https://via.placeholder.com/400x500"
+},
+
+{
+    name:"Contestant 02",
+    city:"Yangon",
+    points:0,
+    image:"https://via.placeholder.com/400x500"
+}
+
+];
+
+
+function renderContestants(){
+
+    contestants.sort((a,b)=>b.points-a.points);
+
+    let container =
+    document.getElementById("contestants");
+
+    container.innerHTML="";
+
+    contestants.forEach((person,index)=>{
+
+        container.innerHTML += `
+
+        <div class="card">
+
+        <div class="rank">
+        🏆 TOP ${index+1}
+        </div>
+
+        <img src="${person.image}">
+
+        <div class="info">
+
+        <h2>${person.name}</h2>
+
+        <div class="city">
+        📍 ${person.city}
+        </div>
+
+        <div class="points">
+        ⭐ ${person.points} POINTS
+        </div>
+
+        <button class="vote-btn"
+        onclick="vote(${index})">
+
+        ❤️ VOTE +10 POINTS
+
+        </button>
+
+        </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+function vote(index){
+
+    contestants[index].points += 10;
+
+    localStorage.setItem(
+        "contestants",
+        JSON.stringify(contestants)
+    );
+
+    renderContestants();
+
+}
+
+
+function adminLogin(){
+
+    let pin = prompt("Enter Admin PIN");
+
+    if(pin === "2013"){
+
+        document.getElementById(
+        "adminPanel"
+        ).style.display="block";
+
+    }
+
+    else{
+
+        alert("Incorrect PIN!");
+
+    }
+
+}
+
+
+function addContestant(){
+
+    let name =
+    document.getElementById("name").value;
+
+    let city =
+    document.getElementById("city").value;
+
+    let image =
+    document.getElementById("image").value;
+
+
+    if(name=="" || city==""){
+
+        alert("Please fill all information!");
+
+        return;
+
+    }
+
+
+    contestants.push({
+
+        name:name,
+        city:city,
+        points:0,
+        image:image ||
+        "https://via.placeholder.com/400x500"
+
+    });
+
+
+    localStorage.setItem(
+        "contestants",
+        JSON.stringify(contestants)
+    );
+
+
+    renderContestants();
+
+
+    alert("Contestant Added!");
+
+}
+
+
+renderContestants();
+
+</script>
+
+</body>
+  </html>
